@@ -1,0 +1,7 @@
+[Desktop Entry]
+Exec=/usr/bin/kpad
+Icon=dialog-scripts
+Name=kpad
+Path=
+Type=Application
+X-KDE-AutostartScript=true
