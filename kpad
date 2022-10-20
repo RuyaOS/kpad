@@ -1,0 +1,12 @@
+#!/usr/bin/bash
+if ( ! [ -e "$HOME/.config/kpad_cofigured" ] )
+then
+pkexec lspad | while read line
+do
+i=$(echo "$line" | sed "s:/dev/input/event::g")
+qdbus org.kde.KWin /org/kde/KWin/InputDevice/event$i org.kde.KWin.InputDevice.tapToClick true
+qdbus org.kde.KWin /org/kde/KWin/InputDevice/event$i org.kde.KWin.InputDevice.tapAndDrag true
+done
+touch "$HOME/.config/kpad_cofigured"
+fi
+
