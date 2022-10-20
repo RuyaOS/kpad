@@ -1,0 +1,13 @@
+#!/usr/bin/env python3
+
+import subprocess
+output = subprocess.getoutput("libinput list-devices")
+result = output.split('\n\n')
+final = []
+for i in result:
+    if "Touchpad" in i:
+        for j in i.split('\n'):
+            if "/dev/input" in j:
+                final.append(j.replace(" ","").replace("Kernel:",""))
+for f in final:
+    print(f)
