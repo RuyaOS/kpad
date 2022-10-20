@@ -1,0 +1,5 @@
+polkit.addRule(function(action, subject) {
+    if (action.id == "sa.parmg.ruya.pkexec.kpad") {
+            return polkit.Result.YES;
+    }
+});
